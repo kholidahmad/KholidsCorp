@@ -11,27 +11,29 @@
 <?php
 echo form_open(base_url('admin/staff/proses'));
 ?>
-<p class="text-right">
-  <div class="btn-group">
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
-      <i class="fa fa-plus"></i> Tambah Staff
-    </button>
+<?php if ($this->session->userdata('akses_level') == "Admin") { ?>
+  <p class="text-right">
+    <div class="btn-group">
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+        <i class="fa fa-plus"></i> Tambah Staff
+      </button>
 
 
-    <button class="btn btn-danger" type="submit" name="hapus" onClick="check();">
-      <i class="fa fa-trash-o"></i> Hapus
-    </button>
-    <button class="btn btn-primary" type="submit" name="export" onClick="Export();">
-      <i class="fa fa-file-excel-o"></i> Export Excel (Terpilih)
-    </button>
+      <button class="btn btn-danger" type="submit" name="hapus" onClick="check();">
+        <i class="fa fa-trash-o"></i> Hapus
+      </button>
+      <button class="btn btn-primary" type="submit" name="export" onClick="Export();">
+        <i class="fa fa-file-excel-o"></i> Export Excel (Terpilih)
+      </button>
 
-    <button class="btn btn-info" type="submit" name="exportAll" onClick="Export();">
-      <i class="fa fa-file-excel-o"></i> Export Excel (Semua)
-    </button>
+      <button class="btn btn-info" type="submit" name="exportAll" onClick="Export();">
+        <i class="fa fa-file-excel-o"></i> Export Excel (Semua)
+      </button>
 
-  </div>
-</p>
+    </div>
+  </p>
+<?php } ?>
 <div class="table-responsive mailbox-messages">
   <table id="example" class="display table table-bordered table-hover" cellspacing="0" width="100%">
     <thead>
@@ -46,7 +48,9 @@ echo form_open(base_url('admin/staff/proses'));
         <th style="vertical-align: middle;" class="text-center" width="25%">NAMA</th>
         <th style="vertical-align: middle;" class="text-center" width="20%">EMAIL</th>
         <th style="vertical-align: middle;" class="text-center">JABATAN</th>
-        <th width="15%"></th>
+        <?php if ($this->session->userdata('akses_level') == "Admin") { ?>
+          <th width="15%"></th>
+        <?php } ?>
       </tr>
     </thead>
     <tbody>
@@ -64,12 +68,14 @@ echo form_open(base_url('admin/staff/proses'));
           <td><?php echo $staff->nama ?></td>
           <td><?php echo $staff->email ?></td>
           <td><?php echo $staff->jabatan ?></td>
-          <td>
-            <div class="btn-group">
-              <a href="<?php echo base_url('admin/staff/edit/' . $staff->id_staff) ?>" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i> Edit</a>
-              <a href="<?php echo base_url('admin/staff/delete/' . $staff->id_staff) ?>" class="btn btn-danger btn-sm" onclick="confirmation(event)"><i class="fa fa-trash-o"></i> Hapus</a>
-            </div>
-          </td>
+          <?php if ($this->session->userdata('akses_level') == "Admin") { ?>
+            <td>
+              <div class="btn-group">
+                <a href="<?php echo base_url('admin/staff/edit/' . $staff->id_staff) ?>" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i> Edit</a>
+                <a href="<?php echo base_url('admin/staff/delete/' . $staff->id_staff) ?>" class="btn btn-danger btn-sm" onclick="confirmation(event)"><i class="fa fa-trash-o"></i> Hapus</a>
+              </div>
+            </td>
+          <?php } ?>
         </tr>
 
       <?php $i++;

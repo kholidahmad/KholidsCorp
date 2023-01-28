@@ -42,54 +42,58 @@
         </li>
 
 
+        <?php if ($this->session->userdata('akses_level') == "Admin") { ?>
+          <!-- BERITA DAN INFORMASI -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-newspaper-o"></i>
+              <p>BERITA, PROFIL &amp; LAYANAN <i class="right fa fa-angle-left"></i></p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item"><a href="<?php echo base_url('admin/berita') ?>" class="nav-link"><i class="fa fa-table nav-icon"></i>
+                  <p>Data Berita &amp; Profil</p>
+                </a>
+              </li>
+              <li class="nav-item"><a href="<?php echo base_url('admin/berita/tambah') ?>" class="nav-link"><i class="fa fa-plus nav-icon"></i>
+                  <p>Tambah Berita &amp; Profil</p>
+                </a>
+              </li>
+              <li class="nav-item"><a href="<?php echo base_url('admin/kategori') ?>" class="nav-link"><i class="fa fa-tags nav-icon"></i>
+                  <p>Kategori Berita &amp; Profil</p>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+        <?php } ?>
+
+        <?php if ($this->session->userdata('akses_level') == "Admin") { ?>
+          <!-- GALERI -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-image"></i>
+              <p>GALERI &amp; BANNER <i class="right fa fa-angle-left"></i></p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item"><a href="<?php echo base_url('admin/galeri') ?>" class="nav-link"><i class="fa fa-table nav-icon"></i>
+                  <p>Data Galeri &amp; Banner</p>
+                </a>
+              </li>
+              <li class="nav-item"><a href="<?php echo base_url('admin/galeri/tambah') ?>" class="nav-link"><i class="fa fa-plus nav-icon"></i>
+                  <p>Tambah Galeri &amp; Banner</p>
+                </a>
+              </li>
+              <li class="nav-item"><a href="<?php echo base_url('admin/kategori_galeri') ?>" class="nav-link"><i class="fa fa-tags nav-icon"></i>
+                  <p>Kategori Galeri &amp; Banner</p>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+        <?php } ?>
+
         <!-- BERITA DAN INFORMASI -->
-        <li class="nav-item has-treeview">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fa fa-newspaper-o"></i>
-            <p>BERITA, PROFIL &amp; LAYANAN <i class="right fa fa-angle-left"></i></p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item"><a href="<?php echo base_url('admin/berita') ?>" class="nav-link"><i class="fa fa-table nav-icon"></i>
-                <p>Data Berita &amp; Profil</p>
-              </a>
-            </li>
-            <li class="nav-item"><a href="<?php echo base_url('admin/berita/tambah') ?>" class="nav-link"><i class="fa fa-plus nav-icon"></i>
-                <p>Tambah Berita &amp; Profil</p>
-              </a>
-            </li>
-            <li class="nav-item"><a href="<?php echo base_url('admin/kategori') ?>" class="nav-link"><i class="fa fa-tags nav-icon"></i>
-                <p>Kategori Berita &amp; Profil</p>
-              </a>
-            </li>
-
-          </ul>
-        </li>
-
-        <!-- GALERI -->
-        <li class="nav-item has-treeview">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fa fa-image"></i>
-            <p>GALERI &amp; BANNER <i class="right fa fa-angle-left"></i></p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item"><a href="<?php echo base_url('admin/galeri') ?>" class="nav-link"><i class="fa fa-table nav-icon"></i>
-                <p>Data Galeri &amp; Banner</p>
-              </a>
-            </li>
-            <li class="nav-item"><a href="<?php echo base_url('admin/galeri/tambah') ?>" class="nav-link"><i class="fa fa-plus nav-icon"></i>
-                <p>Tambah Galeri &amp; Banner</p>
-              </a>
-            </li>
-            <li class="nav-item"><a href="<?php echo base_url('admin/kategori_galeri') ?>" class="nav-link"><i class="fa fa-tags nav-icon"></i>
-                <p>Kategori Galeri &amp; Banner</p>
-              </a>
-            </li>
-
-          </ul>
-        </li>
-
-        <!-- BERITA DAN INFORMASI -->
-        <li class="nav-item has-treeview">
+        <!-- <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
             <i class="nav-icon fa fa-download"></i>
             <p>FILE DOWNLOAD <i class="right fa fa-angle-left"></i></p>
@@ -108,10 +112,10 @@
               </a>
             </li>
           </ul>
-        </li>
+        </li> -->
 
         <!-- VIDEO -->
-        <li class="nav-item has-treeview">
+        <!-- <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
             <i class="nav-icon fa fa-youtube"></i>
             <p>VIDEO YOUTUBE <i class="right fa fa-angle-left"></i></p>
@@ -126,10 +130,10 @@
               </a>
             </li>
           </ul>
-        </li>
+        </li> -->
 
         <!-- AGENDA KEGIATAN -->
-        <li class="nav-item has-treeview">
+        <!-- <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
             <i class="nav-icon fa fa-calendar"></i>
             <p>AGENDA <i class="right fa fa-angle-left"></i></p>
@@ -145,48 +149,48 @@
             </li>
 
           </ul>
-        </li>
+        </li> -->
 
         <!-- CLIENT -->
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a href="<?php echo base_url('admin/client') ?>" class="nav-link">
             <i class="nav-icon fa fa-group"></i>
             <p>
               DATA CLIENT
             </p>
           </a>
-        </li>
-        <?php if ($this->session->userdata('akses_level') == "Admin") { ?>
-          <!-- STAFF -->
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-users"></i>
-              <p>STAFF &amp; TEAM <i class="right fa fa-angle-left"></i></p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item"><a href="<?php echo base_url('admin/staff') ?>" class="nav-link"><i class="fa fa-table nav-icon"></i>
-                  <p>Data Staff &amp; Team</p>
-                </a>
-              </li>
+        </li> -->
+        <!-- STAFF -->
+        <li class="nav-item has-treeview">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fa fa-users"></i>
+            <p>STAFF &amp; TEAM <i class="right fa fa-angle-left"></i></p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item"><a href="<?php echo base_url('admin/staff') ?>" class="nav-link"><i class="fa fa-table nav-icon"></i>
+                <p>Data Staff &amp; Team</p>
+              </a>
+            </li>
+            <?php if ($this->session->userdata('akses_level') == "Admin") { ?>
               <li class="nav-item"><a href="<?php echo base_url('admin/staff/tambah') ?>" class="nav-link"><i class="fa fa-plus nav-icon"></i>
                   <p>Tambah Staff &amp; Team</p>
                 </a>
               </li>
-              <li class="nav-item"><a href="<?php echo base_url('admin/director') ?>" class="nav-link"><i class="fa fa-tags nav-icon"></i>
-                  <p>Director</p>
-                </a>
-              </li>
-              <li class="nav-item"><a href="<?php echo base_url('admin/bagian') ?>" class="nav-link"><i class="fa fa-tags nav-icon"></i>
-                  <p>Departemen</p>
-                </a>
-              </li>
-              <li class="nav-item"><a href="<?php echo base_url('admin/Division') ?>" class="nav-link"><i class="fa fa-tags nav-icon"></i>
-                  <p>Division</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-        <?php } ?>
+            <?php } ?>
+            <li class="nav-item"><a href="<?php echo base_url('admin/director') ?>" class="nav-link"><i class="fa fa-tags nav-icon"></i>
+                <p>Director</p>
+              </a>
+            </li>
+            <li class="nav-item"><a href="<?php echo base_url('admin/bagian') ?>" class="nav-link"><i class="fa fa-tags nav-icon"></i>
+                <p>Departemen</p>
+              </a>
+            </li>
+            <li class="nav-item"><a href="<?php echo base_url('admin/Division') ?>" class="nav-link"><i class="fa fa-tags nav-icon"></i>
+                <p>Division</p>
+              </a>
+            </li>
+          </ul>
+        </li>
 
         <?php if ($this->session->userdata('akses_level') == "Admin") { ?>
           <!-- MENU USER -->

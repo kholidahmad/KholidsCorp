@@ -23,7 +23,7 @@ class Bagian_model extends CI_Model
 
 	public function listing_array()
 	{
-		return $this->db->select('id_bagian,nama_bagian')->from('bagian')->get()->result_array();
+		return $this->db->select('*')->from('bagian')->get()->result_array();
 	}
 
 	// Total

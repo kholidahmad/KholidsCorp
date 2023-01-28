@@ -64,6 +64,8 @@ $nav_layanan                = $this->nav_model->nav_layanan();
                             <li><a href="<?php echo base_url('Organisasi') ?>">ORGANISASI</a></li>
                             <!-- kontak  -->
                             <li><a href="<?php echo base_url('kontak') ?>">KONTAK</a></li>
+                            <!-- login  -->
+                            <li><a href="<?php echo base_url('login') ?>">Login</a></li>
                         </ul>
                         <!-- .header-search-box -->
                     </div>

@@ -16,7 +16,8 @@ class Organisasi extends CI_Controller
 	{
 		$site 			= $this->konfigurasi_model->listing();
 		$bagian 	= $this->bagian_model->listing_array();
-
+		// print_r($bagian);
+		// die;
 		$data = array(
 			'title'		=> 'Organisasi ' . $site->namaweb . ' | ' . $site->tagline,
 			'deskripsi'	=> 'Organisasi ' . $site->namaweb . ' | ' . $site->tagline . ' ' . $site->tentang,
